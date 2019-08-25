@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<title>REST Roulette</title>
+
+	<link href="{{ url_for('static', filename='css/min.css') }}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='js/min.js') }}"></script>
+
+    <!-- Fonts and Material Icons -->
+	<link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700|Material+Icons"/>
+  </head>
+  <body class="slides noPreload animated">
+
+    <section class="slide fade-6 kenBurns">
+      <div class="content">
+        <div class="container">
+          <div class="wrap">
+
+            <div class="fix-7-12">
+              <div class="fix-3-12">
+                <img class="wide ae-1 fromCenter" src="{{ url_for('static', filename='assets/img/logo.png') }}">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
+              </div>
+
+              <p class="ae-2 hero cropBottom margin-top-3">
+                <span class="opacity-8">
+                  <b>Play your luck in roulette.</b>
+                  <br>Free, open-source JSON REST API
+                  <br><br>
+                  <pre class="ae-3 hero"><b>GET</b> /api/play<br>Params: bet, wager
+                  </pre>
+            </span></p>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="background" style="background-image:url(static/assets/img/background/bg.jpg)"></div>
+    </section>
+
+    <nav class="panel bottom   forceMobileView">
+      <div class="sections desktop">
+        <div class="center">
+          <ul class="menu uppercase">
+            <li><a href="#">Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </body>
+</html>
