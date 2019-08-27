@@ -1,5 +1,5 @@
 
-<img src="https://www.roulette.rip/static/assets/img/background/bg.jpg" />
+<img src="/static/assets/img/background/bg.jpg" />
 
 # REST Roulette
 
