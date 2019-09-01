@@ -10,9 +10,10 @@ Free, open-source JSON REST API
 </center>
 
 ## Usage
-<b>Base URL:</b>
+### Base URL
 <pre>https://www.roulette.rip</pre>
 <br>
+
 ### Play game
 <pre><b>GET</b> /api/play</pre>
 
