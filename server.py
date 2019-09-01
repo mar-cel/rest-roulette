@@ -2,6 +2,7 @@
 
 
 # Python libraries
+import json
 import sys
 # 3rd party libraries
 from flask import Flask, render_template, request, jsonify
@@ -11,7 +12,8 @@ import roulette
 
 
 # HTML files
-HTML_INDEX = 'index.html'
+INDEX = 'index'
+HTML_INDEX = INDEX + '.html'
 # Required parameters
 PARAM_BET = 'bet'
 PARAM_WAGER = 'wager'
@@ -26,20 +28,28 @@ ERROR_INVALID_NUMBER = 'Error generating number'
 ERROR_INVALID_BET = 'Invalid bet: %s'
 ERROR_INVALID_WAGER = 'Invalid wager: %s'
 ERROR_UNSPECIFIED = 'Error fulfilling request'
+# Defaults
+DEFAULT_BET = 'even'
+DEFAULT_WAGER = '200'
 # Flask instantiation
 APP = Flask(__name__)
+APP.config['JSON_SORT_KEYS'] = False
 
 
 # Displays home page
-@APP.route('/')
+@APP.route('/', methods=['GET'])
 def home():
-    return render_template(HTML_INDEX, **get_attributes())
+    req_display = json.dumps(roulette.play(DEFAULT_BET, DEFAULT_WAGER))
+    return render_template(HTML_INDEX, req_display=req_display)
 
 
 # API request to play roulette
 @APP.route('/api/play', methods=['GET'])
 def api_play():
-    payload = request.args
+    return play_handler(request.args)
+
+
+def play_handler(payload):
     is_valid, error_msg = validate_params(payload)
     if not is_valid:
         print('Invalid payload: %s' % error_msg)

@@ -12,6 +12,7 @@
 	<link href="{{ url_for('static', filename='css/min.css') }}" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/min.js') }}"></script>
+    <script type="text/javascript" src="/static/js/play.js"></script>
 
 
     <!-- Fonts and Material Icons -->
@@ -31,14 +32,26 @@
               </div>
 
               <p class="ae-2 hero cropBottom margin-top-3">
-                <span class="opacity-8">
-              <b>Play your luck in roulette.</b>
-              <br>Free, open-source JSON REST API
-              <br><br>
-              <pre class="ae-3 hero"><b>GET</b> /api/play<br><br>Params:<br><u>bet</u>:</b> odd, even, low, high, red,<br> black, green, or [0 through 36]<br><b><u>wager</u>:</b> any number
-              <br><br>See GitHub for more documentation.
-              </pre>
-            </span></p>
+                <span class="ae-3 opacity-8">
+                  <b>Play your luck in roulette.</b>
+                  <br>Free, open-source JSON REST API
+                  <br><br>
+                  <pre class="ae-3 hero"><b>GET</b> /api/play<br><br><b>Params:</b><br><u>bet</u>:</b> odd, even, low, high, red,<br> black, green, or [0 through 36]<br><b><u>wager</u>:</b> any number
+                  <br><br>See GitHub for more documentation.
+                    <br><br><b>Response:</b>
+                  <div style="text-align: center;">
+                    <div style="position: relative; text-align: left; margin-left:40%;"><text id="req_display_text"><script>document.write(JSON.stringify(JSON.parse('{{ req_display|safe }}'), null, 2));</script></text></div>
+                  </div>
+                  </pre>
+                </span>
+                </p>
+
+              <form id="play_form" class="slides-form" action="." method="POST" name="form" autocomplete="off" _lpchecked="1">
+                <input type="text" class="input-9 ae-8 fromCenter done" id="bet_input" name="bet" placeholder="bet" value="even">
+                <input type="text" class="input-9 ae-8 fromCenter done" id="wager_input" name="wager" placeholder="wager" value="200">
+                <a href="#" id="play_button"><button type="button" name="play_button" class="button gradient red ae-7 fromCenter done">play</button></a>
+              </form>
+
             </div>
 
 
