@@ -1,19 +1,19 @@
 <center>
-<img src="https://roulette.rip/img/roulette.jpg" />
+<img src="/static/assets/img/background/bg.jpg" />
 
 # REST Roulette
 <b>Play your luck in roulette.</b>
 
 Free, open-source JSON REST API
 
-<b>[roulette.rip](https://roulette.rip)</b>
+<b>[roulette.rip](http://roulette.rip)</b>
 </center>
 
 ## Usage
 <b>Base URL:</b>
-<pre>https://roulette.rip</pre>
+<pre>https://www.roulette.rip</pre>
 <br>
-<b>Play game:</b>
+### Play game
 <pre><b>GET</b> /api/play</pre>
 
 <b>Required parameters:</b>
