@@ -1,5 +1,7 @@
 <center>
-<img src="/static/assets/img/background/bg.jpg" />
+  
+![Rest Roulette Screenshot](https://github.com/user-attachments/assets/da871bcc-be83-4312-871a-50a82233e496)
+
 
 # REST Roulette
 <b>Play your luck in roulette.</b>
